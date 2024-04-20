@@ -8,11 +8,11 @@ function App() {
         <>
         
         <Layout>
-            <section className='w-full  flex items-center justify-center ' >
+            {/* <section className='w-full  flex items-center justify-center ' >
                 <div className='w-20 h-20 bg-red-400' >
                     helloo
                 </div>
-            </section>
+            </section> */}
         </Layout>
 
 <PlayList />

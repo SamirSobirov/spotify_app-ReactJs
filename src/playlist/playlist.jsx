@@ -3,6 +3,10 @@
 
 export default function PlayList() {
     return (
-        <h1>hi</h1>
+
+        <div>
+        <h1 className="items-center">hi</h1>
+        <h2>hello World</h2>
+        </div>
     )
 }

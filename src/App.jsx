@@ -1,24 +1,21 @@
-import './App.css'
-import Layout from './layout/Layout'
-import PlayList from './playlist/playlist'
+import "./App.css";
+import Layout from "./layout/Layout";
+import PlayList from "./playlist/playlist";
 
 function App() {
+  return (
+    <>
+      <Layout>
+        <div className="items-center ">
+          <p className="text-center text-4xl font-bold mr-[500px] mt-[25px] text-white">
+            Good morning
+          </p>
+        </div>
+      </Layout>
 
-    return (
-        <>
-        
-        <Layout>
-            {/* <section className='w-full  flex items-center justify-center ' >
-                <div className='w-20 h-20 bg-red-400' >
-                    helloo
-                </div>
-            </section> */}
-        </Layout>
-
-<PlayList />
-        
-        </>
-    )
+      <PlayList />
+    </>
+  );
 }
 
-export default App
+export default App;

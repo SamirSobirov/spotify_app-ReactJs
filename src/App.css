@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+body {
+    background-color: #222222;
+    /* background: linear-gradient(gray, black); */
+    
+    align-items: center;
+    text-align: right;
+    justify-content: end;
+}

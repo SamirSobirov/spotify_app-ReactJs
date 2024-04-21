@@ -11,9 +11,19 @@ function App() {
             Good morning
           </p>
         </div>
+
+
+
       </Layout>
 
       <PlayList />
+
+      <div className="items-center ">
+          <p className="text-center text-4xl font-bold mr-[370px] mt-[48px] text-white">
+          Shows you might like
+          </p>
+        </div>
+      
     </>
   );
 }

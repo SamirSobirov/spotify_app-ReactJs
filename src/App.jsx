@@ -20,7 +20,7 @@ function App() {
       <PlayList />
 
       <div className="items-center ">
-          <p className="text-center text-4xl font-bold mr-[370px] mt-[48px] text-white">
+          <p className="text-center text-4xl font-bold mr-[420px] mt-[48px] text-white">
           Shows you might like
           </p>
         </div>

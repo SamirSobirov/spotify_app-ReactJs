@@ -6,7 +6,7 @@ export default function ArtistsPlaylist() {
     return(
 
         <>
-        <div className="items-end flex justify-center  text-center mt-[40px] gap-12 ml-[280px]">
+        <div className="items-end flex justify-center  text-center mt-[40px] gap-12 ml-[250px]">
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
                 <img src="./images/artist1.svg" alt="" />

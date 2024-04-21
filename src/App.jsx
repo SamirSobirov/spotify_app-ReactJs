@@ -1,6 +1,7 @@
 import "./App.css";
 import Layout from "./layout/Layout";
 import PlayList from "./playlist/playlist";
+import ArtistsPlaylist from './artistplaylist/artist'
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           Shows you might like
           </p>
         </div>
+
+
+        <ArtistsPlaylist />
       
     </>
   );

@@ -15,30 +15,30 @@ export default function ArtistsPlaylist() {
 
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
-                <img src="./images/artist1.svg" alt="" />
+                <img src="./images/artist2.svg" alt="" />
                 <p className="pt-[10px] text-[15px] text-white text-start">MEDITATION SELF</p>
             </div>
 
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
-                <img src="./images/artist1.svg" alt="" />
+                <img src="./images/artist3.svg" alt="" />
                 <p className="pt-[10px] text-[14px] text-white text-start">Words beyond act...</p>
             </div>
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
-                <img src="./images/artist1.svg" alt="" />
+                <img src="./images/artist4.svg" alt="" />
                 <p className="pt-[10px] text-[15px] text-white text-start">The Alexa Show</p>
             </div>
 
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
-                <img src="./images/artist1.svg" alt="" />
+                <img src="./images/artist5.svg" alt="" />
                 <p className="pt-[10px] text-[15px] text-white text-start">The Stories of Ma...</p>
             </div>
 
 
             <div className="w-32 bg-[#181818] h-[180px] rounded-lg">
-                <img src="./images/artist1.svg" alt="" />
+                <img src="./images/artist6.svg" alt="" />
                 <p className="pt-[10px] text-[14px] text-white text-start">Motivation Daily b...</p>
             </div>
             

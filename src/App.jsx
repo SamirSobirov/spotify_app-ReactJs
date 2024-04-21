@@ -8,7 +8,7 @@ function App() {
     <>
       <Layout>
         <div className="items-center ">
-          <p className="text-center text-4xl font-bold mr-[500px] mt-[25px] text-white">
+          <p className="text-center text-4xl font-bold mr-[540px] mt-[25px] text-white">
             Good morning
           </p>
         </div>

@@ -6,6 +6,7 @@ import { AiFillHome } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { BiLibrary } from "react-icons/bi";
 import ProfileMenu from "../components/ProfileMenu";
+import { GrInstallOption } from "react-icons/gr";
 
 export default function Layout({ children }) {
   return (
@@ -107,11 +108,20 @@ export default function Layout({ children }) {
             </li>
             </div>
 
+
+
+
+
+
+            <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[63px]  px-6">
+            <GrInstallOption  size={24}/>
+                <span className="text-lg font-bold">Install App</span>
+              </button>
+
           </ul>
         </nav>
       </aside>
       {children}
-      <div></div>
     </>
   );
 }

@@ -113,7 +113,7 @@ export default function Layout({ children }) {
 
 
 
-            <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[20%]  px-6">
+            <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[18%]  px-6">
             <GrInstallOption  size={24}/>
                 <span className="text-lg font-bold">Install App</span>
               </button>

@@ -4,7 +4,7 @@ export default function PlayList() {
       <div className="ml-[17%]">
         <div className="items-end flex justify-center  text-center mt-[20px] ">
           <div className="bg-[#303030] w-[20%] flex ">
-            <img className="h-[71px]" src="./images/liked_songs.svg" alt="" />
+            <img className="h-[71px]" src="./images/liked_songs1.svg" alt="" />
             <span className="p-6 text-white">Liked Songs</span>
           </div>
 

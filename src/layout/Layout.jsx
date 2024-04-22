@@ -34,14 +34,14 @@ export default function Layout({ children }) {
               <CiSearch size={26} />
               <span className="text-lg font-bold">Search</span>
             </li>
-            <li className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
+            <li className="cursor-pointer text-white flex items-center justify-start gap-5  px-6">
               <BiLibrary size={26} />
               <span className="text-lg font-bold">Library</span>
             </li>
 
 
 
-            <div className="mt-[14px]">
+            <div className="mt-[15%]">
               <button className="cursor-pointer text-white flex items-center justify-start gap-5 px-6">
               <img
                   src="./images/create_img.svg"
@@ -78,7 +78,7 @@ export default function Layout({ children }) {
 
 
 
-            <div className="mt-[30px]">
+            <div className="mt-[15%]">
             <li className="cursor-pointer text-white flex items-center justify-start px-6 ">
               <span className="text-lg font-bold">FAV</span>
             </li>
@@ -113,7 +113,7 @@ export default function Layout({ children }) {
 
 
 
-            <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[63px]  px-6">
+            <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[27%]  px-6">
             <GrInstallOption  size={24}/>
                 <span className="text-lg font-bold">Install App</span>
               </button>

@@ -25,7 +25,7 @@ export default function Layout({ children }) {
         <img src="/icons/big-logo.svg" alt="logo" className="pl-6" />
         <nav>
           <ul>
-            <li className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6 ">
+            <li className="cursor-pointer text-white flex items-center justify-start gap-5 px-6 ">
               <AiFillHome size={26} />
               <span className="text-lg font-bold">Home</span>
             </li>
@@ -40,8 +40,8 @@ export default function Layout({ children }) {
 
 
 
-            <div className="mt-[54px]">
-              <button className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
+            <div className="mt-[14px]">
+              <button className="cursor-pointer text-white flex items-center justify-start gap-5 px-6">
               <img
                   src="./images/create_img.svg"
                   alt=""
@@ -50,7 +50,7 @@ export default function Layout({ children }) {
                 <span className="text-lg font-bold">Create Playlist</span>
               </button>
 
-              <button className="rounded-3xl cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
+              <button className="rounded-3xl cursor-pointer text-white flex items-center justify-start mt-[10px] gap-5 px-6">
                 <img
                   src="./images/liked_songs.svg"
                   alt=""
@@ -63,7 +63,7 @@ export default function Layout({ children }) {
 
 
 
-              <button className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
+              <button className="cursor-pointer text-white flex items-center justify-start gap-5 mt-[10px]  px-6">
                 <img
                   src="./images/Your Episodes_img.svg"
                   alt=""
@@ -76,6 +76,36 @@ export default function Layout({ children }) {
 
 
 
+
+            <div className="mt-[30px]">
+            <li className="cursor-pointer text-white flex items-center justify-start px-6 ">
+              <span className="text-lg font-bold">FAV</span>
+            </li>
+
+            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+              <span className="text-lg font-bold">Daily Mix 1</span>
+            </li>
+
+            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
+              <span className="text-lg font-bold">Discover Weekly</span>
+            </li>
+
+
+            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
+              <span className="text-lg font-bold">Malayalam</span>
+            </li>
+
+
+            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
+              <span className="text-lg font-bold">Dance / Electronix Mix</span>
+            </li>
+
+
+
+            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
+              <span className="text-lg font-bold">EDM / Popular</span>
+            </li>
+            </div>
 
           </ul>
         </nav>

@@ -53,7 +53,7 @@ export default function Layout({ children }) {
 
               <button className="rounded-3xl cursor-pointer text-white flex items-center justify-start mt-[10px] gap-5 px-6">
                 <img
-                  src="./images/liked_songs.svg"
+                  src="./images/liked_songs1.svg"
                   alt=""
                   className="w-[26px]"
                 />

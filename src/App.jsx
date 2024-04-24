@@ -1,7 +1,7 @@
 import "./App.css";
 import Layout from "./layout/Layout";
-import PlayList from "./playlist/playlist";
-import ArtistsPlaylist from './artistplaylist/artist'
+import PlayList from "./components/playlist";
+import ArtistsPlaylist from './components/artist'
 
 function App() {
   return (

@@ -6,7 +6,7 @@ export default function ArtistsPlaylist() {
     return(
 
         <>
-        <div className="w-[100%] items-end flex justify-center  text-center mt-[40px] gap-[28px] pl-[120px]">
+        <div className="w-[100%] items-end flex justify-center  text-center mt-[40px] gap-[28px] pl-[180px]">
 
             <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
                 <div className="items-center text-center pt-[10px] pl-[15px] ">

@@ -20,7 +20,7 @@ function App() {
       <PlayList />
 
       <div className="items-center flex justify-between whitespace-nowrap">
-          <p className="text-center text-4xl font-bold ml-[330px] mt-[48px] text-white">
+          <p className="text-center text-4xl font-bold pl-[340px] mt-[48px] text-white">
           Shows you might like
           </p>
 

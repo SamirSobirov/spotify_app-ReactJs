@@ -7,6 +7,7 @@ import { CiSearch } from "react-icons/ci";
 import { BiLibrary } from "react-icons/bi";
 import ProfileMenu from "../components/ProfileMenu";
 import { GrInstallOption } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export default function Layout({ children }) {
   return (
@@ -26,24 +27,30 @@ export default function Layout({ children }) {
         <img src="/icons/big-logo.svg" alt="logo" className="pl-6" />
         <nav>
           <ul>
-            <li className="cursor-pointer text-white flex items-center justify-start gap-5 px-6 ">
-              <AiFillHome size={26} />
-              <span className="text-lg font-bold">Home</span>
-            </li>
-            <li className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
-              <CiSearch size={26} />
-              <span className="text-lg font-bold">Search</span>
-            </li>
-            <li className="cursor-pointer text-white flex items-center justify-start gap-5  px-6">
-              <BiLibrary size={26} />
-              <span className="text-lg font-bold">Library</span>
-            </li>
+            <Link to={"/"}>
+              <li className="cursor-pointer text-white flex items-center justify-start gap-5 px-6 ">
+                <AiFillHome size={26} />
+                <span className="text-lg font-bold">Home</span>
+              </li>
+            </Link>
 
+            <Link to={"/search"}>
+              <li className="cursor-pointer text-white flex items-center justify-start gap-5 py-3 px-6">
+                <CiSearch size={26} />
+                <span className="text-lg font-bold">Search</span>
+              </li>
+            </Link>
 
+            <Link to={"/library"}>
+              <li className="cursor-pointer text-white flex items-center justify-start gap-5  px-6">
+                <BiLibrary size={26} />
+                <span className="text-lg font-bold">Library</span>
+              </li>
+            </Link>
 
             <div className="mt-[15%]">
               <button className="cursor-pointer text-white flex items-center justify-start gap-5 px-6">
-              <img
+                <img
                   src="./images/create_img.svg"
                   alt=""
                   className="w-[26px] bg-white"
@@ -60,10 +67,6 @@ export default function Layout({ children }) {
                 <span className="text-lg font-bold">Liked Songs</span>
               </button>
 
-
-
-
-
               <button className="cursor-pointer text-white flex items-center justify-start gap-5 mt-[10px]  px-6">
                 <img
                   src="./images/Your Episodes_img.svg"
@@ -74,50 +77,38 @@ export default function Layout({ children }) {
               </button>
             </div>
 
-
-
-
-
             <div className="mt-[15%]">
-            <li className="cursor-pointer text-white flex items-center justify-start px-6 ">
-              <span className="text-lg font-bold">FAV</span>
-            </li>
+              <li className="cursor-pointer text-white flex items-center justify-start px-6 ">
+                <span className="text-lg font-bold">FAV</span>
+              </li>
 
-            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
-              <span className="text-lg font-bold">Daily Mix 1</span>
-            </li>
+              <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+                <span className="text-lg font-bold">Daily Mix 1</span>
+              </li>
 
-            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
-              <span className="text-lg font-bold">Discover Weekly</span>
-            </li>
+              <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+                <span className="text-lg font-bold">Discover Weekly</span>
+              </li>
 
+              <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+                <span className="text-lg font-bold">Malayalam</span>
+              </li>
 
-            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
-              <span className="text-lg font-bold">Malayalam</span>
-            </li>
+              <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+                <span className="text-lg font-bold">
+                  Dance / Electronix Mix
+                </span>
+              </li>
 
-
-            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
-              <span className="text-lg font-bold">Dance / Electronix Mix</span>
-            </li>
-
-
-
-            <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">              
-              <span className="text-lg font-bold">EDM / Popular</span>
-            </li>
+              <li className="cursor-pointer text-white flex items-center justify-start mt-[10px] px-6 ">
+                <span className="text-lg font-bold">EDM / Popular</span>
+              </li>
             </div>
 
-
-
-
-
-
             <button className="cursor-pointer text-white flex items-center justify-start gap-[25px] mt-[18%]  px-6">
-            <GrInstallOption  size={24}/>
-                <span className="text-lg font-bold">Install App</span>
-              </button>
-
+              <GrInstallOption size={24} />
+              <span className="text-lg font-bold">Install App</span>
+            </button>
           </ul>
         </nav>
       </aside>

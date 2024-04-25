@@ -7,9 +7,9 @@ import { CiSearch } from "react-icons/ci";
 import { BiLibrary } from "react-icons/bi";
 import ProfileMenu from "../components/ProfileMenu";
 import { GrInstallOption } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-export default function Layout({ children }) {
+export default function Layout() {
   return (
     <>
       <header className="w-full flex justify-between items-center pl-[340px] pr-10 py-5">
@@ -112,7 +112,7 @@ export default function Layout({ children }) {
           </ul>
         </nav>
       </aside>
-      {children}
+      <Outlet />
     </>
   );
 }

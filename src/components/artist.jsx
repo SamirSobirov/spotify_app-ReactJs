@@ -1,63 +1,19 @@
 
 
 
+export default function Artist({img_src, artist_playlist, artist_name}) {
 
-export default function ArtistsPlaylist() {
-    return(
 
+    return (
         <>
-        <div className="w-[100%] items-end flex justify-center  text-center mt-[40px] gap-[28px] pl-[180px]">
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-                <div className="items-center text-center pt-[10px] pl-[15px] ">
-                <img className="w-[120px]" src="./images/artist1.svg" alt="" />
-                <p className="pt-[10px] text-[15px] text-white text-start ">Weekly Motivatio...</p>
+            <div className="cursor-pointer artist flex flex-col gap-6 py-6 px-7 bg-[#181818]">
+                <img className='rounded-2xl' src={img_src} alt="" />
+                <div className="artist_info flex flex-col gap-1.5">
+                    <h1 className='artist_playlist text-xl text-white'>{artist_playlist}</h1>
+                    <h6 className='artist_name text-base text-white'>{artist_name}</h6>
                 </div>
             </div>
-
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-            <div className="items-center text-center pt-[10px] pl-[15px] ">
-            <img className="w-[120px]" src="./images/artist2.svg" alt="" />
-                <p className="pt-[10px] text-[15px] text-white text-start">MEDITATION SELF</p>
-                </div>
-            </div>
-
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-            <div className="items-center text-center pt-[10px] pl-[15px] ">
-            <img className="w-[120px]" src="./images/artist3.svg" alt="" />
-                <p className="pt-[10px] text-[14px] text-white text-start">Words beyond act...</p>
-                </div>
-            </div>
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-            <div className="items-center text-center pt-[10px] pl-[15px] ">
-            <img className="w-[120px]" src="./images/artist4.svg" alt="" />
-                <p className="pt-[10px] text-[15px] text-white text-start">The Alexa Show</p>
-                </div>
-            </div>
-
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-            <div className="items-center text-center pt-[10px] pl-[15px] ">
-            <img className="w-[120px]" src="./images/artist5.svg" alt="" />
-                <p className="pt-[10px] text-[15px] text-white text-start">The Stories of Ma...</p>
-                </div>
-            </div>
-
-
-            <div className="w-[150px] bg-[#181818] h-[180px] rounded-lg">
-            <div className="items-center text-center pt-[10px] pl-[15px] ">
-            <img className="w-[120px]" src="./images/artist6.svg" alt="" />
-                <p className="pt-[10px] text-[14px] text-white text-start">Motivation Daily b...</p>
-                </div>
-            </div>
-            
-            
-        </div>
-
-
         </>
     )
 }
+

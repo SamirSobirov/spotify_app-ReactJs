@@ -4,10 +4,8 @@ import PLaylist from "../components/playlist";
 export default function Search() {
   return (
     <>
-      <section className="w-full flex items-center justify-center bg-green-800">
-        <h1>Search page</h1>
-      </section>
-      <div className="title_playlist w-full pl-[341px] pt-10">
+     
+      <div className="title_playlist w-full pl-[341px]">
         <h1 className="title text-white font-bold text-4xl pb-9 select-none text-start">
           Your top genres
         </h1>

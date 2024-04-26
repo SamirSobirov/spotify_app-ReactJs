@@ -18,26 +18,28 @@ export default function Search() {
         
 
         <>
-      <div className="bg-[url('/images/bg_img_POP.svg')] bg-no-repeat bg-[#8D67AB] playlist rounded w-[370px] h-[240px] flex items-center gap-5 cursor-pointer select-none">
+      <div className="bg-[url('/images/bg_img_POP.svg')] bg-right-bottom bg-no-repeat bg-[#8D67AB] playlist rounded w-[370px] h-[240px] flex items-center gap-5 cursor-pointer select-none">
         
-        <p className="text-4xl pl-3 pt-6 playlist_name text-start pb-[200px] text-white font-bold">
+        <p className="text-4xl pl-6 pt-10 playlist_name text-start pb-[200px] text-white font-bold">
           Pop
         </p>
       </div>
 
-      <div className="playlist rounded w-[370px] h-[240px] bg-[#303030] flex items-center gap-5 cursor-pointer select-none">
-        <img src="./images/liked_songs1.svg" alt="" />
-        <h2 className="playlist_name text-xl text-white font-bold">
-          HEllo
-        </h2>
+
+
+      <div className="bg-[url('/images/bg_img_HipHop.svg')] bg-[#BA5D07] bg-right-bottom bg-no-repeat playlist rounded w-[370px] h-[240px] flex items-center gap-5 cursor-pointer select-none">
+        
+        <p className="text-4xl pl-6 pt-10 playlist_name text-start pb-[200px] text-white font-bold">
+        Hip-Hop
+        </p>
       </div>
 
 
-      <div className="playlist rounded w-[370px] h-[240px] bg-[#303030] flex items-center gap-5 cursor-pointer select-none">
-        <img src="./images/liked_songs1.svg" alt="" />
-        <h2 className="playlist_name text-xl text-white font-bold">
-          HEllo
-        </h2>
+      <div className="bg-[url('/images/bg_img_Indie.svg')] bg-right-bottom bg-no-repeat bg-[#608108] playlist rounded w-[370px] h-[240px] flex items-center gap-5 cursor-pointer select-none">
+        
+        <p className="text-4xl pl-6 pt-10 playlist_name text-start pb-[200px] text-white font-bold">
+        Indie
+        </p>
       </div>
     </>
 

@@ -5,6 +5,7 @@ import Artist from "./components/Artist";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route  index element={<Home />} />
           <Route path="/search" element={<Search />} />
         </Route>
+        <Route path='/login' element={<Login />} />
       </Routes>
     </>
   );

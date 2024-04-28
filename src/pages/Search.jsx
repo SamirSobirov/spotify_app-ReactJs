@@ -74,18 +74,7 @@ export default function Search() {
       </div>
     </>
 
-          {/* <PLaylist
-           img_src={"/images/liked_songs1.svg"}
-           playlist_name={"Liked Songs"}
-         />
-         <PLaylist
-           img_src={"/images/liked_songs2.svg"}
-           playlist_name={"Neffex Playlist"}
-         />
-         <PLaylist
-           img_src={"/images/liked_songs3.png"}
-           playlist_name={"K/ DA"}
-         /> */}
+       
         </div>
       </div>
 
@@ -130,6 +119,7 @@ export default function Search() {
     </>
   );
 }
+
 
 
 

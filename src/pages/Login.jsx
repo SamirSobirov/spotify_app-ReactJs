@@ -34,12 +34,14 @@ export default function Login(params) {
           />
         </div>
         <div className="mb-6">
+            <a href={url}>
           <button
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
           >
             Sign Up
           </button>
+          </a>
         </div>
         <p className="text-sm text-gray-600">
           By clicking Sign Up, you agree to our{' '}

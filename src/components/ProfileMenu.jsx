@@ -24,14 +24,16 @@ export default function ProfileMenu() {
                     <div className="w-60 p-4 bg-[#282828] absolute right-10 top-[70px] rounded-md" >
                         <ul className="text-white text-xl font-medium flex flex-col gap-5" >
                             <li className="flex items-center justify-between cursor-pointer" >
-                                <span>Account</span>
+                                <span> Account</span>
                                 <RxExternalLink size={28} />
                             </li>
                             <li className="flex items-center justify-between cursor-pointer" >
                                 <span>Profile</span>
                             </li>
                             <li className="flex items-center justify-between cursor-pointer" >
-                                <span>Log  out</span>
+                                
+                                <span> Log  out </span>
+                                
                             </li>
                         </ul>
                     </div>

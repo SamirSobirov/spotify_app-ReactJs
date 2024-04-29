@@ -8,8 +8,33 @@ import { BiLibrary } from "react-icons/bi";
 import ProfileMenu from "../components/ProfileMenu";
 import { GrInstallOption } from "react-icons/gr";
 import { Link, Outlet } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Layout() {
+  const [token, setToken] = useState('')
+  const navigate = useNavigate()
+
+
+  useEffect(() => {
+      let token = localStorage.getItem('token')
+      let hash = location.hash
+
+      if (!token && hash) {
+          token = hash.split('=')[1].split('&')[0]
+
+          location.href = ""
+          localStorage.setItem('token', token)
+      }
+
+      setToken(token)
+  }, [])
+
+
+  if (!token) {
+      navigate('/login')
+  }
   return (
     <>
       <header className="w-full flex justify-between items-center pl-[340px] pr-10 py-5">

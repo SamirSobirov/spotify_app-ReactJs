@@ -1,5 +1,6 @@
 import Artist from "../components/Artist";
 import PLaylist from "../components/playlist";
+import { FaHeart } from "react-icons/fa";
 
 
 export default function Home() {
@@ -73,7 +74,20 @@ export default function Home() {
           </div>
         </div>
       
+
+      {/* <div className="bg-black w-[100%] h-[112px] sticky flex items-center">
+          <img src="/images/liked_songs2.svg" alt="" className="h-[70px] pl-6"/>
+          <div className="pl-6">
+            <h3 className="text-white">Dreaming On</h3>
+            <p className="text-[#B3B3B3] text-start">NEFFEX</p>
+
+            <FaHeart />
+
+          </div>
+
+          </div> */}
         </>
+            
             
         
     )

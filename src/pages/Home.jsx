@@ -1,94 +1,88 @@
-import Artist from "../components/Artist";
-import PLaylist from "../components/playlist";
-import { FaHeart } from "react-icons/fa";
+import { useEffect, useState } from "react"
+import MultiCard from "../components/MultiCard"
+import Recomendation from "../components/Recomendation"
+import Layout from "../layout/Layout"
+import axios from "axios"
+import { Link } from "react-router-dom"
 
 
-export default function Home() {
+function Home() {
+    const token = localStorage.getItem('token')
+    const URL = import.meta.env.VITE_API_URL
+    const [playlists, setPlaylists] = useState([])
+    const [user, setUser] = useState({})
+    const [recomendations, setRecomendations] = useState([])
 
-    return(
-        <>
-        <div className="title_playlist w-full pl-[341px] pt-10">
-          <h1 className="title text-white font-bold text-4xl pb-9 select-none text-start">
-            Good morning
-          </h1>
-          <div className="playlists flex flex-wrap gap-7">
-            <PLaylist
-              img_src={"/images/liked_songs1.svg"}
-              playlist_name={"Liked Songs"}
-            />
-            <PLaylist
-              img_src={"/images/liked_songs2.svg"}
-              playlist_name={"Neffex Playlist"}
-            />
-            <PLaylist
-              img_src={"/images/liked_songs3.png"}
-              playlist_name={"K/ DA"}
-            />
-            <PLaylist
-              img_src={"/images/liked_songs4.svg"}
-              playlist_name={"Dance / Electronic Mix"}
-            />
-          </div>
-        </div>
 
-        <div className="shows_container pt-12 pl-[340px] pr-10">
-          <div className="shows_header flex justify-between items-center pb-8 select-none">
-            <h1 className="text-white font-bold text-3xl">
-              Shows you might like
-            </h1>
-            <button className="see_all text-white text-lg font-bold">
-              SEE ALL
-            </button>
-          </div>
-          <div className="shows flex gap-8 flex-wrap">
-            <Artist
-              img_src={"/images/artist1.svg"}
-              artist_playlist={"Weekly Motivatio..."}
-              artist_name={"Ben Ina Scott"}
-            />
-            <Artist
-              img_src={"/images/artist2.svg"}
-              artist_playlist={"MEDITATION SELF"}
-              artist_name={"Ibn Hussain Aleen"}
-            />
-            <Artist
-              img_src={"/images/artist3.svg"}
-              artist_playlist={"Words beyond act..."}
-              artist_name={"Samuel Scott"}
-            />
-            <Artist
-              img_src={"/images/artist4.svg"}
-              artist_playlist={"The Alexa Show"}
-              artist_name={"Adriana Tom"}
-            />
-            <Artist
-              img_src={"/images/artist5.svg"}
-              artist_playlist={"The Stories of Ma..."}
-              artist_name={"Lexus"}
-            />
-            <Artist
-              img_src={"/images/artist6.svg"}
-              artist_playlist={"Motivation Daily b..."}
-              artist_name={"Georgina Martha"}
-            />
-          </div>
-        </div>
-      
+    useEffect(() => {
+        axios.get(URL + '/me/playlists', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                setPlaylists(res.data.items)
+            })
 
-      {/* <div className="bg-black w-[100%] h-[112px] sticky flex items-center">
-          <img src="/images/liked_songs2.svg" alt="" className="h-[70px] pl-6"/>
-          <div className="pl-6">
-            <h3 className="text-white">Dreaming On</h3>
-            <p className="text-[#B3B3B3] text-start">NEFFEX</p>
+        axios.get(URL + '/me', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                setUser(res.data)
+            })
+        axios.get(URL + '/browse/featured-playlists', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(res => {
+                console.log(res.data);
+                setRecomendations(res.data.playlists.items)
+            })
+    }, [])
 
-            <FaHeart />
+    return (
+        <main className='pl-[345px] mr-10 mt-6 text-white'>
+            <section className='today-rec'>
+                <h1 className='text-4xl mb-6'>Доброе утро</h1>
 
-          </div>
+                <div className='w-full flex gap-y-5 gap-x-7 flex-wrap'>
+                    {
+                        playlists.map(item => (
+                            <Link to={'/playlist/' + item.id}>
+                                <Recomendation
+                                    key={item.id}
+                                    img={item.images ? item.images[0].url : '/images/playlist-card.png'}
+                                    title={item.name}
+                                />
+                            </Link>
+                        ))
+                    }
+                </div>
+            </section>
 
-          </div> */}
-        </>
-            
-            
-        
+            <section className='might-like mt-12 text-white'>
+                <h2 className='text-3xl mb-6'>Специально для тебя, {user.display_name}</h2>
+
+                <div className='might-like-box w-full flex justify-start flex-wrap '>
+                    {
+                        recomendations.map(item => (
+                            <Link to={'/playlist/' + item.id}>
+                                <MultiCard
+                                    key={item.id}
+                                    img_src={item.images ? item.images[0].url : '/images/playlist-card.png'}
+                                    title={item.name}
+                                    subtitle={item.owner.display_name}
+                                />
+                            </Link>
+                        ))
+                    }
+                </div>
+            </section>
+        </main>
     )
 }
+
+export default Home

@@ -18,7 +18,7 @@ function Search() {
                 <button><RxCross2 size={21} /></button>
             </div>
 
-            <main className="pl-[345px] h-fit mr-10 mt-6 text-white flex gap-5 justify-between">
+            {/* <main className="pl-[345px] h-fit mr-10 mt-6 text-white flex gap-5 justify-between">
                 <section className="w-[40%]">
                     <h2 className="text-3xl font-bold mb-5">Лучший результат</h2>
                     <BestResult
@@ -256,7 +256,7 @@ function Search() {
                 <h2 className="text-3xl font-bold mb-5">Остальное</h2>
 
                 <div className="allgenres_grid grid grid-cols-6 gap-4"></div>
-            </section>
+            </section> */}
         </>
     );
 }

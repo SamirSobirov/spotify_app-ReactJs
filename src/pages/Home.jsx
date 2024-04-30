@@ -46,7 +46,7 @@ function Home() {
     return (
         <main className='pl-[345px] mr-10 mt-6 text-white'>
             <section className='today-rec'>
-                <h1 className='text-4xl mb-6'>Доброе утро</h1>
+                <h1 className='text-4xl mb-6'>Good Morning</h1>
 
                 <div className='w-full flex gap-y-5 gap-x-7 flex-wrap'>
                     {
@@ -64,7 +64,7 @@ function Home() {
             </section>
 
             <section className='might-like mt-12 text-white'>
-                <h2 className='text-3xl mb-6'>Специально для тебя, {user.display_name}</h2>
+                <h2 className='text-3xl mb-6'>Shows you might like {user.display_name}</h2>
 
                 <div className='might-like-box w-full flex justify-start flex-wrap '>
                     {

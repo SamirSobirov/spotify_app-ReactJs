@@ -1,4 +1,3 @@
-
 import { CiSearch } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import BestResult from "../components/BestResult";

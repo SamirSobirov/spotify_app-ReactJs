@@ -1,6 +1,5 @@
 
 
-
 // function Genre({img_src, title}) {
 //     return (  );
 // }

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import MultiCard from "../components/MultiCard"
 import Recomendation from "../components/Recomendation"
@@ -87,3 +86,4 @@ function Home() {
 }
 
 export default Home
+

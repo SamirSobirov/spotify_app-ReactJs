@@ -1,7 +1,6 @@
 
 
 
-
 export default function Recomendation({img, title}) {
     return (
         <div className=" flex justify-start items-center gap-5 w-[260px] overflow-hidden rounded transition ease-in-out duration-300 bg-[#303030] select-none cursor-pointer hover:bg-[#3f3f3f] ">

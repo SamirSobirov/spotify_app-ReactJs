@@ -1,6 +1,5 @@
 
 
-
 export default function MultiCard({img_src, title, subtitle}) {
 
     return (

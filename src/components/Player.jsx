@@ -2,9 +2,14 @@ import { useContext } from "react";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { IoPauseSharp, IoPlay  } from "react-icons/io5";
 import { MdSkipPrevious, MdSkipNext } from "react-icons/md";
+import { TbArrowsDiagonal } from "react-icons/tb";
+import { FiVolume2 } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
+
 import { TrackContext } from "../App";
 import { useState } from "react";
 import { useEffect } from "react";
+
 
 
 export default function Player(params) {
@@ -33,7 +38,7 @@ export default function Player(params) {
                     <span>{track?.singers}</span>
                 </div>
                 <button className="text-white" >
-                    <FaRegArrowAltCircleDown size={18} />
+                    <FaHeart size={18} />
                 </button>
             </div>
 
@@ -59,10 +64,14 @@ export default function Player(params) {
                 </div>
             </div>
             <div>
-                <button></button>
+
+                <div className="flex items-center pr-[29px] gap-[10px]">
+                <button><FiVolume2 size={27}  color="#B3B3B3"/></button>
+
                 <input type="range" />
+                
                 <button></button>
-                <button></button>
+                </div>
             </div>
         </section>
     )

@@ -21,7 +21,7 @@ export default function Player(params) {
     }, [track])
 
     return (
-        <section className="fixed left-0 right-0 bottom-0 h-[116px] bg-[#181818] z-10 flex items-center justify-between p-5" >
+        <section className="fixed left-0 right-0 bottom-0 h-[116px] bg-[#1a1a1a] z-10 flex items-center justify-between p-5" >
             <div className="flex items-center gap-4 " >
                 <img
                     className="w-[70px] h-[70px]"

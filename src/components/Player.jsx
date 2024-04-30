@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { IoPauseSharp, IoPlay  } from "react-icons/io5";

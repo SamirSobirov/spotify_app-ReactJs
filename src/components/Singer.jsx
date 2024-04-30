@@ -1,6 +1,5 @@
 
 
-
 function Singer({img_src, nickName, role}) {
     return ( 
         <div className="singer w-fit p-3 rounded select-none cursor-pointer transition duration-300 ease-in-out hover:bg-[#2a2a2a]">

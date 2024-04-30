@@ -1,5 +1,6 @@
 
 
+
 function MiniTrack({ img_src, title, singer, duration }) {
     return (
         <div className="mini_track flex items-center justify-between p-2 rounded transition duration-300 ease-in-out cursor-pointer select-none hover:bg-[#2a2a2a]">

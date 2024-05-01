@@ -73,7 +73,7 @@ function Playlist() {
                         </div>
                     </section>
                     ) : (
-                        <span>loading...</span>
+                        <span className="text-5xl"> <b>{playlist.name} </b></span>
                     )
                 }
                
@@ -112,10 +112,12 @@ function Playlist() {
                                         src={item.track.preview_url}
                                         index={idx + 1}
                                         key={idx}
-                                    />
-                                ))
-                            )
-                        }
+                                        />
+                                    ))
+                                )
+                            }
+                            
+
                     </div>
                 </section>
             </main>

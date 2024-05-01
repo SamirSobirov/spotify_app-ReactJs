@@ -9,6 +9,7 @@ import { FaHeart } from "react-icons/fa";
 import { TrackContext } from "../App";
 import { useState } from "react";
 import { useEffect } from "react";
+import { data } from "autoprefixer";
 
 
 
@@ -64,11 +65,12 @@ export default function Player(params) {
                 </div>
             </div>
             <div>
+                    {/* console.log({track.time}); */}
 
                 <div className="flex items-center pr-[29px] gap-[10px]">
                 <button><FiVolume2 size={27}  color="#B3B3B3"/></button>
 
-                <input type="range" />
+                <input type="range"/>
                 
                 <button></button>
                 </div>

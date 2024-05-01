@@ -73,7 +73,7 @@ function Playlist() {
                         </div>
                     </section>
                     ) : (
-                        <span className="text-5xl"> <b>{playlist.name} </b></span>
+                        <span className="text-5xl"> <b>{playlist?.name}</b></span>
                     )
                 }
                
@@ -86,6 +86,7 @@ function Playlist() {
 
                         <button className="">
                             <RxDotsHorizontal size={30} color="#cbc8c4" />
+                            <span className="text-2xl"> <b>{ }</b></span>
                         </button>
                     </div>
 

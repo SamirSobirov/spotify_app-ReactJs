@@ -1,3 +1,4 @@
+
 import { useContext } from "react";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { IoPauseSharp, IoPlay, IoVolumeHigh } from "react-icons/io5";
@@ -81,9 +82,9 @@ export default function Player(params) {
                     </button>
                 </div>
                 <div className="w-full flex items-center gap-2 text-[#c4c4c4]" >
-                    <span>0:00</span>
+                    <span>0:57</span>
                     <input type="range" className="custom-range w-[630px]" />
-                    <span>0:30</span>
+                    <span>0:57</span>
                 </div>
             </div>
             <div>

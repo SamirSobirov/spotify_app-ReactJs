@@ -2,22 +2,22 @@ import { FaPlay } from "react-icons/fa";
 import { LuClock3 } from "react-icons/lu";
 import { RxDotsHorizontal } from "react-icons/rx";
 import Track from "../components/Track";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { PLaylistContext } from "../context/PlaylistCTX";
+import { artistsString, toMinutes } from "../helpers/utils";
 
 
 function Playlist() {
-    
-
     const [playlist, setPlaylist] = useState({})
+    const {playlist_ctx, setPLaylist_ctx} = useContext(PLaylistContext)
 
-    // const [playlist, setPlaylist] = useState({})
     useEffect(() => {
         const token = localStorage.getItem('token')
         const URL = import.meta.env.VITE_API_URL
         const id = location.pathname.split('/').at(-1)
-        
-        
+
+        console.log(token);
         axios.get(`${URL}/playlists/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -25,58 +25,39 @@ function Playlist() {
         })
             .then(res => {
                 setPlaylist(res.data)
-               
+                console.log(res.data.tracks.items, 'traaaack');
+                setPLaylist_ctx(res.data.tracks.items)
             })
     }, [])
 
-    function toMinutes(num) {
-        let duration = num / 60000
-
-        return ((duration.toFixed(2)).split('.').join(':'));
-    }
-
-    function artistsString(arr) {
-        let str = ''
-
-        if (arr.length > 1) {
-            arr.forEach(element => {
-                str += `${element.name}, `
-            });
-
-            str = str.slice(0, -1)
-        } else {
-            str = arr[0].name
-        }
-
-        return str
-    }
+   
 
     return (
         <>
-            <div className="backdrop backdrop-blur-[70px] absolute top-0 left-0 right-0 h-[70%] w-screen z-[-1] bg-gradient-to-b from-[#c4c4c470] to-[#161616]"></div>
+            <div className="backdrop backdrop-blur-[70px] absolute top-0 left-0 right-0 h-[70%] w-screen z-[-1] bg-gradient-to-b from-[#1fdf6570] to-[#161616]"></div>
 
             <main className=" text-white pl-[340px] mt-6">
                 {
-                    playlist?.tracks?.length > 0 ? (
+                    playlist?.tracks ?  (
                         <section className="flex gap-6">
-                        <div className="playlist_img">
-                            <img className="max-w-[290px] max-h-[290px] w-[250px] h-[250px] rounded object-cover shadow-[0px_0px_65px_4px_rgba(0,0,0,0.54)]" src={playlist?.images[0]?.url} alt="playlist-card" />
-                        </div>
-                        <div className="playlist_info flex flex-col justify-end gap-3">
-                            <h3 className="text-base">{playlist.type}</h3>
-                            <h1 className="text-7xl font-bold w-[80%]">{playlist.name}</h1>
-                            <p className="text-[#cbc8c4]">{playlist.description}</p>
-                            <div className="flex  text-[#cbc8c4]">
-                                <span className="text-white cursor-pointer hover:underline">{playlist.owner.display_name}</span>
-                                <h5>, {playlist.tracks.items.length} треков</h5>
+                            <div className="playlist_img">
+                                <img className="max-w-[290px] max-h-[290px] w-[250px] h-[250px] rounded object-cover shadow-[0px_0px_65px_4px_rgba(0,0,0,0.54)]" src={playlist?.images[0]?.url} alt="playlist-card" />
                             </div>
-                        </div>
-                    </section>
+                            <div className="playlist_info flex flex-col justify-end gap-3">
+                                <h3 className="text-base">{playlist.type}</h3>
+                                <h1 className="text-7xl font-bold w-[80%]">{playlist.name}</h1>
+                                <p className="text-[#cbc8c4]">{playlist.description}</p>
+                                <div className="flex  text-[#cbc8c4]">
+                                    <span className="text-white cursor-pointer hover:underline">{playlist.owner.display_name}</span>
+                                    <h5>, {playlist.tracks.items.length} треков</h5>
+                                </div>
+                            </div>
+                        </section>
                     ) : (
-                        <span className="text-5xl"> <b>{playlist?.name}</b></span>
+                        <span>loading...</span>
                     )
                 }
-               
+
 
                 <section className="mt-8 pt-8">
                     <div className="tools flex gap-10">
@@ -86,7 +67,6 @@ function Playlist() {
 
                         <button className="">
                             <RxDotsHorizontal size={30} color="#cbc8c4" />
-                            <span className="text-2xl"> <b>{ }</b></span>
                         </button>
                     </div>
 
@@ -111,15 +91,12 @@ function Playlist() {
                                         album={item.track.album.name}
                                         date={item.track.release_date}
                                         src={item.track.preview_url}
-                                        index={idx + 1}
-                                        
+                                        index={idx}
                                         key={idx}
-                                        />
-                                    ))
-                                )
-                            }
-                            
-
+                                    />
+                                ))
+                            )
+                        }
                     </div>
                 </section>
             </main>

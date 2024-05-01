@@ -3,6 +3,9 @@ import ProfileMenu from "../components/ProfileMenu";
 import { TiHome } from "react-icons/ti";
 import { AiFillHome } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
+import { HiPlusSmall } from "react-icons/hi2";
+import { FaHeart } from "react-icons/fa";
+
 import { BiLibrary } from "react-icons/bi";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -63,9 +66,24 @@ export default function Layout() {
                         <Link to={'/library'}>
                             <li className="text-white flex items-center justify-start gap-6 py-3 px-6 cursor-pointer w-full select-none rounded-md hover:bg-[#303030] ">
                                 <BiLibrary color="white" size={26} />
-                                <span className="text-lg font-bold">Library</span>
+                                <span className="text-lg font-bold">Your Library</span>
                             </li>
                         </Link>
+                        <li className="text-white flex items-center justify-start gap-6 pt-10  px-6 cursor-pointer w-full select-none rounded-md hover:bg-[#303030] ">
+                                <HiPlusSmall color="black" size={26} className="bg-white"/>
+                                <span className="text-lg font-bold">Create Playlist</span>
+                            </li>
+
+                            <li className="text-white flex items-center justify-start gap-6 pt-4 px-6 cursor-pointer w-full select-none rounded-md hover:bg-[#303030] ">
+                                <img src="/images/layout_likedsong.png" alt="heart" className="w-[27px]"/>
+                                <span className="text-lg font-bold">Liked Songs</span>
+                            </li>
+
+
+                            <li className="text-white flex items-center justify-start gap-6 pt-4  px-6 cursor-pointer w-full select-none rounded-md hover:bg-[#303030] ">
+                            <img src="/images/Your Episodes_img.svg" alt="heart" className="w-[27px] "/>
+                                <span className="text-lg font-bold">Your Episodes</span>
+                            </li>
                     </ul>
                 </nav>
             </aside>

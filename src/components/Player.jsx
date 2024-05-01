@@ -21,6 +21,7 @@ export default function Player(params) {
     useEffect(() => {
         const audio = document.querySelector('audio')
 
+        
 
         audio.play()
 
@@ -35,7 +36,7 @@ export default function Player(params) {
                     alt="" 
                 />
                 <div className="text-white flex flex-col items-start " >
-                    <span>{track?.name}Dreaming On</span>
+                    <span className="w-[32px] text-base flex">{track?.name}Dreaming On</span>
                     <span className="text-[#B3B3B3] text-sm">{track?.singers}NEFFEX</span>
                 </div>
                 <button className="text-white" >
@@ -65,7 +66,6 @@ export default function Player(params) {
                 </div>
             </div>
             <div>
-                    {/* console.log({track.time}); */}
 
                 <div className="flex items-center pr-[29px] gap-[10px]">
                 <button><FiVolume2 size={27}  color="#B3B3B3"/></button>

@@ -112,6 +112,7 @@ function Playlist() {
                                         date={item.track.release_date}
                                         src={item.track.preview_url}
                                         index={idx + 1}
+                                        
                                         key={idx}
                                         />
                                     ))

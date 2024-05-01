@@ -81,9 +81,9 @@ export default function Player(params) {
                     </button>
                 </div>
                 <div className="w-full flex items-center gap-2 text-[#c4c4c4]" >
-                    <span>0:57</span>
+                    <span>0:00</span>
                     <input type="range" className="custom-range w-[630px]" />
-                    <span>0:57</span>
+                    <span>0:30</span>
                 </div>
             </div>
             <div>

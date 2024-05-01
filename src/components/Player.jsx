@@ -30,12 +30,12 @@ export default function Player(params) {
             <div className="flex items-center gap-4 " >
                 <img
                     className="w-[70px] h-[70px]"
-                    src="https://plus.unsplash.com/premium_photo-1676834376020-a17554ed4fbb?q=80&w=2097&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    src={track?.img}
                     alt="" 
                 />
                 <div className="text-white flex flex-col items-start " >
-                    <span>{track?.name}</span>
-                    <span>{track?.singers}</span>
+                    <span>{track?.name}Dreaming On</span>
+                    <span className="text-[#B3B3B3] text-sm">{track?.singers}NEFFEX</span>
                 </div>
                 <button className="text-white" >
                     <FaHeart size={18} />

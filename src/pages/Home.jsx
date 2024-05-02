@@ -38,7 +38,7 @@ function Home() {
             }
         })
             .then(res => {
-                console.log(res.data);
+                
                 setRecomendations(res.data.playlists.items)
             })
     }, [])

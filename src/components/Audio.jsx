@@ -9,9 +9,9 @@ export default function AudioSpinner() {
             width="20"
             color="#4fa94d"
             
-            // ariaLabel="audio-loading"
-            // wrapperStyle={{}}
-            // wrapperClass="wrapper-class"
+            ariaLabel="audio-loading"
+            wrapperStyle={{}}
+            wrapperClass="wrapper-class"
             
             visible={true}
         />

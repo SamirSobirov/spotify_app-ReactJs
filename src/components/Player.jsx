@@ -30,7 +30,6 @@ export default function Player(params) {
 
   useEffect(() => {
     const audio = document.querySelector("audio");
-    console.log({ track });
     audio.src = track?.src;
     audio.play();
   }, [track]);

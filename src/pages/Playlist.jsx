@@ -17,7 +17,7 @@ function Playlist() {
         const URL = import.meta.env.VITE_API_URL
         const id = location.pathname.split('/').at(-1)
 
-        console.log(token);
+    
         axios.get(`${URL}/playlists/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -25,7 +25,7 @@ function Playlist() {
         })
             .then(res => {
                 setPlaylist(res.data)
-                console.log(res.data.tracks.items, 'traaaack');
+               
                 setPLaylist_ctx(res.data.tracks.items)
             })
     }, [])

@@ -94,6 +94,8 @@ export default function Player(params) {
         <span>0:30</span>
       </div>
     </div>
+
+    
       <div>
         <button></button>
         <div className="flex items-center gap-2">

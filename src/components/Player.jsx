@@ -49,10 +49,22 @@ export default function Player(params) {
     };
     setTrack(next_track);
   }
-  function prevTrack() {
-    setTrack(playlist_ctx[track.index - 1]);
-  }
 
+
+  function prevTrack() {
+    const curr_track = playlist_ctx[track.index - 1];
+    const prevTrack = {
+      img: curr_track.track.album.images[0].url,
+      name: curr_track.track.name,
+      singers: artistsString(curr_track.track.artists),
+      duration: toMinutes(curr_track.track.duration_ms),
+      album: curr_track.track.album.name,
+      date: curr_track.track.release_date,
+      src: curr_track.track.preview_url,
+      index: track.index - 1,
+    }
+    setTrack(prevTrack);
+  }
   
   return (
     <section className="fixed left-0 right-0 bottom-0 h-[116px] bg-[#181818] z-10 flex items-center justify-between p-5">
@@ -95,7 +107,7 @@ export default function Player(params) {
       </div>
     </div>
 
-    
+
       <div>
         <button></button>
         <div className="flex items-center gap-2">

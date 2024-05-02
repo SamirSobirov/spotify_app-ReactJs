@@ -7,8 +7,22 @@ import { TrackContext } from "../context/TrackCTX";
 import { useEffect } from "react";
 import { PLaylistContext } from "../context/PlaylistCTX";
 import { artistsString, toMinutes } from "../helpers/utils";
+import VolumeChange from './VolumeChange'
 
 export default function Player(params) {
+    
+        const [isPlaying, setIsPlaying] = useState(false);
+      
+        const togglePlayPause = () => {
+          const audio = document.getElementById('audio');
+          if (isPlaying) {
+            audio.pause();
+          } else {
+            audio.play();
+          }
+          setIsPlaying(!isPlaying);
+        };
+
   const [play, setPlay] = useState(false);
 
   const { track, setTrack } = useContext(TrackContext);
@@ -62,29 +76,30 @@ export default function Player(params) {
       </div>
 
       <div className="flex items-center flex-col justify-center gap-2">
-        <audio src={track?.src} controls hidden></audio>
-        <div className="flex items-center gap-2">
-          <button onClick={prevTrack} className="text-[#c4c4c4]">
-            <MdSkipPrevious size={24} />
-          </button>
-          <button className="p-[8px] text-center bg-white rounded-full">
-            {true ? <IoPlay size={24} /> : <IoPauseSharp size={24} />}
-          </button>
-          <button onClick={nextTrack} className="text-[#c4c4c4]">
-            <MdSkipNext size={24} />
-          </button>
-        </div>
-        <div className="w-full flex items-center gap-2 text-[#c4c4c4]">
-          <span>0:00</span>
-          <input type="range" className="custom-range w-[630px]" />
-          <span>0:30</span>
-        </div>
+      <audio id="audio" src={track?.src} controls hidden></audio>
+      <div className="flex items-center gap-2">
+        <button onClick={prevTrack} className="text-[#c4c4c4]">
+          <MdSkipPrevious size={24} />
+        </button>
+        <button onClick={togglePlayPause} className="p-[8px] text-center bg-white rounded-full">
+          {isPlaying ? <IoPauseSharp size={24} /> : <IoPlay size={24} />}
+        </button>
+        <button onClick={nextTrack} className="text-[#c4c4c4]">
+          <MdSkipNext size={24} />
+        </button>
       </div>
+      <div className="w-full flex items-center gap-2 text-[#c4c4c4]">
+        <span>0:00</span>
+        <input type="range" className="custom-range w-[630px]" />
+        <span>0:30</span>
+      </div>
+    </div>
       <div>
         <button></button>
         <div className="flex items-center gap-2">
           <IoVolumeHigh color="white" size={24} />
-          <input type="range" />
+          
+          <VolumeChange />
         </div>
         <button></button>
         <button></button>

@@ -10,9 +10,10 @@ import { artistsString, toMinutes } from "../helpers/utils";
 import VolumeChange from "./VolumeChange";
 
 export default function Player(params) {
+
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
+    const minutes = Math.round(seconds / 60);
+    const remainingSeconds = Math.round(seconds % 60);
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 

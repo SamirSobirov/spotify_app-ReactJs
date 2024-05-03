@@ -10,6 +10,12 @@ import { artistsString, toMinutes } from "../helpers/utils";
 import VolumeChange from "./VolumeChange";
 
 export default function Player(params) {
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  };
+
   const [currentTime, setCurrentTime] = useState(0);
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -113,8 +119,7 @@ export default function Player(params) {
           </button>
         </div>
         <div className="w-full flex items-center gap-2 text-[#c4c4c4]">
-          <span>0:00</span>
-          
+          <span>{formatTime(currentTime)}</span>
           <input
             type="range"
             className="custom-range w-[630px]"

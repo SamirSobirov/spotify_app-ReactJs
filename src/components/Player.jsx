@@ -11,7 +11,7 @@ import VolumeChange from './VolumeChange'
 
 export default function Player(params) {
     
-        const [isPlaying, setIsPlaying] = useState(false);
+        const [isPlaying, setIsPlaying] = useState(true);
       
         const togglePlayPause = () => {
           const audio = document.getElementById('audio');

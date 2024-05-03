@@ -7,21 +7,22 @@ import { TrackContext } from "../context/TrackCTX";
 import { useEffect } from "react";
 import { PLaylistContext } from "../context/PlaylistCTX";
 import { artistsString, toMinutes } from "../helpers/utils";
-import VolumeChange from './VolumeChange'
+import VolumeChange from "./VolumeChange";
 
 export default function Player(params) {
-    
-        const [isPlaying, setIsPlaying] = useState(true);
-      
-        const togglePlayPause = () => {
-          const audio = document.getElementById('audio');
-          if (isPlaying) {
-            audio.pause();
-          } else {
-            audio.play();
-          }
-          setIsPlaying(!isPlaying);
-        };
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlayPause = () => {
+    const audio = document.getElementById("audio");
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   const [play, setPlay] = useState(false);
 
@@ -29,9 +30,19 @@ export default function Player(params) {
   const { playlist_ctx } = useContext(PLaylistContext);
 
   useEffect(() => {
-    const audio = document.querySelector("audio");
+    const audio = document.getElementById("audio");
     audio.src = track?.src;
     audio.play();
+
+    audio.addEventListener("timeupdate", () => {
+      setCurrentTime(audio.currentTime);
+    });
+
+    return () => {
+      audio.removeEventListener("timeupdate", () => {
+        setCurrentTime(audio.currentTime);
+      });
+    };
   }, [track]);
 
   function nextTrack() {
@@ -49,7 +60,6 @@ export default function Player(params) {
     setTrack(next_track);
   }
 
-
   function prevTrack() {
     const curr_track = playlist_ctx[track.index - 1];
     const prevTrack = {
@@ -61,14 +71,14 @@ export default function Player(params) {
       date: curr_track.track.release_date,
       src: curr_track.track.preview_url,
       index: track.index - 1,
-    }
+    };
     setTrack(prevTrack);
   }
-  
+
   return (
     <section className="fixed left-0 right-0 bottom-0 h-[116px] bg-[#181818] z-10 flex items-center justify-between p-5">
       <div className="flex items-center gap-4 ">
-        {track? (
+        {track ? (
           <img className="w-[70px] h-[70px]" src={track.img} alt="" />
         ) : (
           <img
@@ -87,31 +97,41 @@ export default function Player(params) {
       </div>
 
       <div className="flex items-center flex-col justify-center gap-2">
-      <audio id="audio" src={track?.src} controls hidden></audio>
-      <div className="flex items-center gap-2">
-        <button onClick={prevTrack} className="text-[#c4c4c4]">
-          <MdSkipPrevious size={24} />
-        </button>
-        <button onClick={togglePlayPause} className="p-[8px] text-center bg-white rounded-full">
-          {isPlaying ? <IoPauseSharp size={24} /> : <IoPlay size={24} />}
-        </button>
-        <button onClick={nextTrack} className="text-[#c4c4c4]">
-          <MdSkipNext size={24} />
-        </button>
+        <audio id="audio" src={track?.src} controls hidden></audio>
+        <div className="flex items-center gap-2">
+          <button onClick={prevTrack} className="text-[#c4c4c4]">
+            <MdSkipPrevious size={24} />
+          </button>
+          <button
+            onClick={togglePlayPause}
+            className="p-[8px] text-center bg-white rounded-full"
+          >
+            {isPlaying ? <IoPauseSharp size={24} /> : <IoPlay size={24} />}
+          </button>
+          <button onClick={nextTrack} className="text-[#c4c4c4]">
+            <MdSkipNext size={24} />
+          </button>
+        </div>
+        <div className="w-full flex items-center gap-2 text-[#c4c4c4]">
+          <span>0:00</span>
+          
+          <input
+            type="range"
+            className="custom-range w-[630px]"
+            min="0"
+            max={track?.duration}
+            value={currentTime}
+            onChange={(e) => setCurrentTime(e.target.value)}
+          />
+          <span>0:30</span>
+        </div>
       </div>
-      <div className="w-full flex items-center gap-2 text-[#c4c4c4]">
-        <span>0:00</span>
-        <input type="range" className="custom-range w-[630px]" />
-        <span>0:30</span>
-      </div>
-    </div>
-
 
       <div>
         <button></button>
         <div className="flex items-center gap-2">
           <IoVolumeHigh color="white" size={24} />
-          
+
           <VolumeChange />
         </div>
         <button></button>

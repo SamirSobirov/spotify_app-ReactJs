@@ -12,9 +12,13 @@ import { useEffect, useState } from "react";
 import Player from "../components/Player";
 
 
+
 export default function Layout() {
     const [token, setToken] = useState('')
     const navigate = useNavigate()
+
+
+    
     
     useEffect(() => {
         let token = localStorage.getItem('token')

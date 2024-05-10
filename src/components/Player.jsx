@@ -91,7 +91,7 @@ export default function Player(params) {
                     src={track?.img}
                     alt=""
                 />
-                <div className="text-white flex flex-col items-start w-[150px]" >
+                <div className="text-white flex  flex-col items-start w-[150px]" >
                     <span>{track?.name}Track's name</span>
                     <span>{track?.singers}Artist's name</span>
                 </div>

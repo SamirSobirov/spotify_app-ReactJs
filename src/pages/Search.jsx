@@ -161,7 +161,7 @@ function Search() {
                     </>
                 ) : (
                     <div className="pl-[340px] mt-10 text-white w-[90%] flex justify-center">
-                        <h2 className="text-4xl font-semibold">Find any music!</h2>
+                        <h2 className="text-4xl font-semibold">Find anything music!</h2>
                     </div>
                 )
             }

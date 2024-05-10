@@ -145,7 +145,7 @@ function Search() {
                             <div className="podcasts_grid grid grid-cols-5">
                                 {
                                     results.shows.items.map((item, idx) => (
-                                        <Link to={'/playlist/' + item.id}>
+                                        <Link to={'/Playlist/' + item.id}>
                                             <MultiCard
                                                 key={item.id}
                                                 img_src={item.images[0].url}
@@ -161,7 +161,7 @@ function Search() {
                     </>
                 ) : (
                     <div className="pl-[340px] mt-10 text-white w-[90%] flex justify-center">
-                        <h2 className="text-4xl font-semibold">Попробуйте что-нибудь найти</h2>
+                        <h2 className="text-4xl font-semibold">Find any music!</h2>
                     </div>
                 )
             }

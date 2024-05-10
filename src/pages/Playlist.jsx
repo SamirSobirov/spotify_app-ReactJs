@@ -31,7 +31,7 @@ function Playlist() {
 
     return (
         <>
-            <div className="backdrop backdrop-blur-[70px] absolute top-0 left-0 right-0 h-[70%] w-screen z-[-1] bg-gradient-to-b from-[#1fdf6570] to-[#161616]"></div>
+            <div className="backdrop backdrop-blur-[70px] absolute top-0 left-0 right-0 h-[70%] w-screen z-[-1] bg-gradient-to-b from-[#acacac70] to-[#161616]"></div>
 
             <main className=" text-white pl-[340px] mt-6">
                 {

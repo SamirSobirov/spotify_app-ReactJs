@@ -92,8 +92,8 @@ export default function Player(params) {
                     alt=""
                 />
                 <div className="text-white flex flex-col items-start w-[150px]" >
-                    <span>{track?.name}</span>
-                    <span>{track?.singers}</span>
+                    <span>{track?.name}Track's name</span>
+                    <span>{track?.singers}Artist's name</span>
                 </div>
                 <button className="text-white" >
                     <FaRegArrowAltCircleDown size={18} />

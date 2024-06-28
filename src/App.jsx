@@ -12,6 +12,7 @@ import { PLaylistContext } from './context/PlaylistCTX'
 
 function App() {
     const [track, setTrack] = useState(null)
+    
     const [playlist_ctx, setPLaylist_ctx] = useState([])
 
     return (

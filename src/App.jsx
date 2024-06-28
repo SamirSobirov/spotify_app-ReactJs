@@ -14,6 +14,9 @@ function App() {
     const [track, setTrack] = useState(null)
     const [playlist_ctx, setPLaylist_ctx] = useState([])
 
+
+    
+
     return (
         <PLaylistContext.Provider value={{ playlist_ctx, setPLaylist_ctx }} >
             <TrackContext.Provider value={{ track, setTrack }} >
